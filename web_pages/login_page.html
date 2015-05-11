@@ -1,0 +1,18 @@
+<form id="login_form_div" name="login_form">
+    <img id="hidden_login_page_quit_img" ng-src="{{var.hidden_login_page.quit_div_src}}" ng-click="fn.LoginPageQuit()" ng-mouseenter="fn.hiddenLoginPageBtnChange()" ng-mouseleave="fn.hiddenLoginPageBtnRestore()"/>
+    <div class="hidden_login_item">
+        <label for="hidden_login_accout" class="hidden_login_item_label">帐号：</label>
+        <input id="hidden_login_accout" class="hidden_login_item_content" type="text" name="account" ng-model="var.login.account" ng-pattern="/^[a-zA-Z0-9_]{4,20}$/" placeholder="帐号或手机号" required>
+        <small class="login_error_item" ng-show="login_form.account.$invalid&&var.login.submitted">用户名长度为4-20，由字母和数字组成</small>
+    </div>
+    <div class="hidden_login_item">
+        <label for="hidden_login_password" class="hidden_login_item_label">密码：</label>
+        <input id="hidden_login_password" class="hidden_login_item_content" type="password" name="password" ng-model="var.login.password" ng-pattern="/^[a-zA-Z0-9\#\~\!\@\-\%\^\&\*\.,:;\\\$]{6,22}$/" required>
+        <small class="login_error_item" ng-show="login_form.password.$invalid&&var.login.submitted">密码长度为6-22，由字母和数字及部分符号组成</small>
+    </div>
+    <div class="hidden_login_item">
+        <input id="hidden_login_log_btn" class="hidden_login_btn btn btn-primary" type="button" value="登录" ng-click="fn.LoginSubmit()">
+        <input id="hidden_login_quit_btn" class="hidden_login_btn" type="button" value="取消"  ng-click="fn.LoginPageQuit()">
+    </div>
+</form>
+

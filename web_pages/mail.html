@@ -1,0 +1,272 @@
+<div id="user_mail_top">
+    <div id="set_bar_main_page" class="set_bar">
+        <div class="set_bar_front_blank"></div>
+        <img id="all_mail_chosen_checkbox" click-change-btn original-img="media/img/icons/selected_grey.png" change-img="media/img/icons/selected_green.png" hover-img="media/img/icons/selected_dark.png" change-value-ref="var.all_mail_chosen"
+             ng-click="fn.allMailChosen()" popover="全选" popover-trigger="mouseenter">
+        <input id="mail_chosen_index_input" type="text" ng-model="var.mail_filter" popover="查找关键字" popover-trigger="mouseenter">
+        <div class="btn-group mail_top_set_div" dropdown ng-show="var.mail_set_btn_visible">
+            <div class="dropdown-toggle mail_top_set_btn" dropdown-toggle btn-with-img
+                original-img="media/img/icons/tag_blue.png" change-img="media/img/icons/tag_white.png" img-height="20" img-width="20" img-top="4" img-left="14">
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-click="fn.noteUrgent()"><a href="">标记为紧急</a></li>
+                <li ng-click="fn.noteImportant()"><a href="">标记为重要</a></li>
+                <li ng-click="fn.noteRead()"><a href="">标记为已读</a></li>
+            </ul>
+        </div>
+        <div class="btn-group mail_top_set_div" dropdown ng-show="var.mail_set_btn_visible">
+            <div class="dropdown-toggle mail_top_set_btn" dropdown-toggle btn-with-img
+                    original-img="media/img/icons/to_directory_blue.png" change-img="media/img/icons/to_directory_white.png" img-top="4" img-left="14">
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="item in var.mail_directory.income" ng-show="var.mail_type==0" ng-click="fn.mailToDirectory(item.index)"><a href="">{{item.name}}</a></li>
+                <li ng-repeat="item in var.mail_directory.outcome" ng-show="var.mail_type==1" ng-click="fn.mailToDirectory(item.index)"><a href="">{{item.name}}</a></li>
+            </ul>
+        </div>
+        <div class="mail_top_set_btn float_left margin_left_20" ng-click="fn.mailToTrash()" ng-show="var.mail_set_btn_visible" btn-with-img original-img="media/img/icons/trash_blue.png" change-img="media/img/icons/trash_white.png"  img-top="3" img-left="13"></div>
+        <!--<pagination id="mail_page_navigator" total-items="var.mail_page_count*10" ng-model="var.mail_page_index" max-size=6 class="pagination-sm" boundary-links="true" rotate="false" ng-change="fn.toPage()"></pagination>-->
+        <pager id="mail_page_navigator" total-items="var.mail_page_count*10" ng-model="var.mail_page_index" ng-change="fn.toPage()"></pager>
+        <div id="mail_page_navigator_text">共{{var.mail_count}}封，第{{(var.mail_page_index-1)*20+1}}-{{var.mail_page_index==var.mail_page_count?var.mail_count:var.mail_page_index*20}}封</div>
+    </div>
+    <div id="set_bar_selected" class="set_bar" ng-show="var.mail_content_visible">
+        <div class="set_bar_front_blank"></div>
+        <div class="mail_top_set_btn float_left margin_left_10" ng-click="fn.backToMail()" btn-with-img original-img="media/img/icons/back_arrow_blue.png" change-img="media/img/icons/back_arrow_white.png" img-top="4" img-left="5"></div>
+        <div class="btn-group mail_top_set_div" dropdown>
+            <div class="dropdown-toggle mail_top_set_btn" dropdown-toggle btn-with-img
+                 original-img="media/img/icons/tag_blue.png" change-img="media/img/icons/tag_white.png" img-height="20" img-width="20" img-top="4" img-left="14">
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-click="fn.noteUrgent()"><a href="">标记为紧急</a></li>
+                <li ng-click="fn.noteImportant()"><a href="">标记为重要</a></li>
+                <li ng-click="fn.noteRead()"><a href="">标记为已读</a></li>
+            </ul>
+        </div>
+        <div class="btn-group mail_top_set_div" dropdown>
+            <div class="dropdown-toggle mail_top_set_btn" dropdown-toggle btn-with-img
+                 original-img="media/img/icons/to_directory_blue.png" change-img="media/img/icons/to_directory_white.png" img-top="4" img-left="14">
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="item in var.mail_directory.income" ng-show="var.mail_type==0" ng-click="fn.mailToDirectory(item.index)"><a href="">{{item.name}}</a></li>
+                <li ng-repeat="item in var.mail_directory.outcome" ng-show="var.mail_type==1" ng-click="fn.mailToDirectory(item.index)"><a href="">{{item.name}}</a></li>
+            </ul>
+        </div>
+        <div class="mail_top_set_btn float_left margin_left_10" ng-click="fn.mailToTrash()" btn-with-img original-img="media/img/icons/trash_blue.png" change-img="media/img/icons/trash_white.png"  img-top="3" img-left="13"></div>
+    </div>
+    <div id="set_bar_directory" class="set_bar" ng-show="var.set_directory_visible">
+        <div class="set_bar_front_blank"></div>
+        <div class="mail_top_set_btn float_left margin_left_10" ng-click="fn.backToMail()" btn-with-img original-img="media/img/icons/back_arrow_blue.png" change-img="media/img/icons/back_arrow_white.png" img-top="4" img-left="5"></div>
+        <div style="position:relative;width:50px;height:30px;border-radius:5px;float:left;margin-left:1%;" dropdown>
+            <div class="dropdown-toggle mail_top_set_btn" btn-with-img original-img="media/img/icons/add_blue.png" change-img="media/img/icons/add_white.png" img-top="3" img-left="13" dropdown-toggle></div>
+            <ul class="dropdown-menu">
+                <li ng-click="var.add_income_directory_clicked=true"><a href="">收件箱</a></li>
+                <li ng-click="var.add_outcome_directory_clicked=true"><a href="">发件箱</a></li>
+            </ul>
+        </div>
+        <div class="mail_top_set_btn float_left margin_left_10" ng-click="fn.directoryToTrash()" btn-with-img original-img="media/img/icons/trash_blue.png" change-img="media/img/icons/trash_white.png"  img-top="3" img-left="13"></div>
+    </div>
+</div>
+<div id="user_mail_center">
+    <div id="income_mail_directory" ng-show="!var.mail_content_visible&&var.mail_type==0">
+        <ratio-element class="income_mail_element" ng-repeat="item in var.mail_directory.income" ng-click="fn.changeMailDirectory(0,1,item.index)" ratio-group="0" clicked="" ratio-num="{{var.mail_directory.income.length}}" original-class="income_mail_element_1" change-class="income_mail_element_2" hover-class="income_mail_element_3">{{item.name}}</ratio-element>
+    </div>
+    <div id="outcome_mail_directory" ng-show="!var.mail_content_visible&&var.mail_type==1">
+        <ratio-element class="income_mail_element" ng-repeat="item in var.mail_directory.outcome" ng-click="fn.changeMailDirectory(1,1,item.index)" ratio-group="1" clicked="" ratio-num="{{var.mail_directory.outcome.length}}" original-class="income_mail_element_1" change-class="income_mail_element_2" hover-class="income_mail_element_3">{{item.name}}</ratio-element>
+    </div>
+    <div class="mail_item_column" ng-class="{'background_color_white':mail.read==0}" ng-repeat="mail in var.mails | filter:var.mail_filter" ng-controller="oneMailController" ng-click="fn.showMailContent(mail)" ng-mouseleave="mail.creator_visible=false">
+        <div class="mail_note_div">
+            <img class="mail_note_element" ng-src="{{mail.note.selected}}" ng-mouseenter="fn.selectEnter(mail)" ng-mouseleave="fn.selectLeave(mail)" ng-click="fn.selectClick(mail); $event.stopPropagation()"/>
+            <img class="mail_note_element" ng-src="{{mail.note.urgent}}" ng-mouseenter="fn.noteEnter(mail,'urgent')" ng-mouseleave="fn.noteLeave(mail,'urgent')" ng-click="fn.noteClick(mail,'urgent'); $event.stopPropagation()"/>
+            <img class="mail_note_element" ng-src="{{mail.note.important}}" ng-mouseenter="fn.noteEnter(mail,'important')" ng-mouseleave="fn.noteLeave(mail,'important')" ng-click="fn.noteClick(mail,'important'); $event.stopPropagation()"/>
+        </div>
+        <div class="mail_creator" ng-show="var.mail_type==0">
+            <div class="mail_creator_name" ng-class="{'mail_item_not_read':mail.read==0,'mail_item_read':mail.read==1}" ng-click="fn.mailCreatorClick(mail);$event.stopPropagation()">{{mail.creator.user_name}}</div>
+            <div class="mail_creator_LDP" ng-class="{'mail_item_not_read':mail.read==0,'mail_item_read':mail.read==1}">
+                <div class="mail_creator_location">{{mail.creator.location}}</div>
+                <div class="mail_creator_department">{{mail.creator.department}}</div>
+                <div class="mail_creator_position">{{mail.creator.position}}</div>
+            </div>
+            <div class="mail_creator_details delay_show" ng-init="mail.creator_visible=false" ng-show="mail.creator_visible">
+                <img class="mail_creator_details_img" ng-src="{{mail.creator.user_portrait_url}}">
+                <div class="mail_creator_details_name">{{mail.creator.user_name}}</div>
+                <div class="mail_creator_details_tel">{{mail.creator.user_phone_number}}</div>
+                <div class="mail_creator_details_loc">{{mail.creator.location}}</div>
+                <div class="mail_creator_details_dep">{{mail.creator.department}}</div>
+                <div class="mail_creator_details_pos">{{mail.creator.position}}</div>
+                <div class="mail_creator_details_divide"></div>
+                <div class="mail_creator_details_words">{{mail.creator.user_words}}</div>
+                <img class="mail_creator_details_cancel_btn" btn-cancel
+                     enter-img="media/img/icons/cancel_orange.png" leave-img="media/img/icons/cancel_blue.png" ng-click="fn.hideCreatorDiv(mail);$event.stopPropagation()" />
+            </div>
+        </div>
+        <div class="mail_creator" ng-show="var.mail_type==1">
+            <div class="mail_creator_front_blank">发送给：</div>
+            <div class="mail_creator_name mail_item_read" ng-click="fn.mailCreatorClick(mail);$event.stopPropagation()">{{mail.receiver_info[0].user_name}}</div>
+            <div class="mail_creator_name mail_item_read" ng-show="mail.receiver_info.length>1">等{{mail.receiver_info.length}}人</div>
+            <div class="mail_creator_details delay_show" ng-init="mail.creator_visible=false" ng-show="mail.creator_visible">
+                <img class="mail_creator_details_img" ng-src="{{mail.receiver_info[0].user_portrait_url}}">
+                <div class="mail_creator_details_name">{{mail.receiver_info[0].user_name}}</div>
+                <div class="mail_creator_details_tel">{{mail.receiver_info[0].user_phone_number}}</div>
+                <div class="mail_creator_details_loc">{{mail.receiver_info[0].location}}</div>
+                <div class="mail_creator_details_dep">{{mail.receiver_info[0].department}}</div>
+                <div class="mail_creator_details_pos">{{mail.receiver_info[0].position}}</div>
+                <div class="mail_creator_details_divide"></div>
+                <div class="mail_creator_details_words">{{mail.receiver_info[0].user_words}}</div>
+                <img class="mail_creator_details_cancel_btn" btn-cancel
+                     enter-img="media/img/icons/cancel_orange.png" leave-img="media/img/icons/cancel_blue.png" ng-click="fn.hideCreatorDiv(mail);$event.stopPropagation()" />
+            </div>
+        </div>
+        <div class="mail_title" ng-class="{'mail_item_not_read':mail.read==0,'mail_item_read':mail.read==1}">{{mail.title}}</div>
+        <div class="mail_create_time" ng-class="{'mail_item_not_read':mail.read==0,'mail_item_read':mail.read==1}">{{mail.create_time}}</div>
+        <img class="mail_read_img" src="media/img/icons/mail.png" ng-if="mail.read==0"/>
+    </div>
+    <div id="mail_read_gif_div"></div>
+</div>
+<div id="user_mail_left">
+    <div id="mail_create_btn" class="mail_left_element" ng-click="fn.writeMail()">写邮件</div>
+    <div class="mail_left_element_divide"></div>
+    <div class="mail_left_element" ng-click="fn.toIncomeBox()" >收件箱<img class="mail_left_element_star delay_show" src="media/img/icons/star_orange.png" ng-show="var.mail_type==0"/></div>
+    <div class="mail_left_element" ng-click="fn.toOutcomeBox()" >已发邮件<img class="mail_left_element_star delay_show" src="media/img/icons/star_orange.png" ng-show="var.mail_type==1"/></div>
+    <div class="mail_left_element">草稿</div>
+    <div class="mail_left_element_divide"></div>
+    <div class="mail_left_element"  ng-click="fn.toggleDirectoryInput()">文件夹设置</div>
+</div>
+<div id="user_mail_content" ng-show="var.mail_content_visible">
+    <div id="mail_content_title_line">
+        <div id="mail_content_title">{{var.mail_content.title}}</div>
+        <img id="mail_content_important_img" ng-if="var.mail_content.important" src="media/img/icons/important_stamp.png">
+        <img id="mail_content_urgent_img" ng-if="var.mail_content.urgent" src="media/img/icons/urgent_stamp.png">
+    </div>
+    <div id="mail_content_user_line">
+        <div class="mail_content_creator_text">发件人：</div>
+        <div class="mail_content_creator_item">{{var.mail_content.creator}}</div>
+        <div class="mail_content_creator_text">收件人：</div>
+        <div class="mail_content_creator_item" ng-repeat="receiver in var.mail_content.receiver track by $index">{{receiver.user_name}}</div>
+    </div>
+    <div id="mail_content_content_area">
+        <div id="mail_text">{{var.mail_content.content}}</div>
+    </div>
+</div>
+<div id="mail_directory_set" ng-show="var.set_directory_visible">
+    <div id="income_mail_directory_set">
+        <div class="mail_directory_set_fieldset">
+            <div class="mail_directory_set_legend">收件箱</div>
+            <div class="mail_directory_set_item" ng-repeat="item in var.mail_directory.income" ng-class="{'mail_directory_set_item_default':item.index==0||item.index==1||item.index==2}">
+                <img src="media/img/icons/folder_vector_white.png" class="mail_directory_set_img" ng-show="!item.chosen">
+                <img src="media/img/icons/folder_vector_red.png" class="mail_directory_set_img" ng-show="item.chosen">
+                <div class="mail_directory_set_text" ng-click="fn.mailDirectoryChosen(item)" ng-class="{'mail_directory_set_text_chosen':item.chosen}" ng-show="!item.chosen||!item.change_name">{{item.name}}</div>
+                <div class="mail_directory_set_edit_div" dropdown>
+                    <img class="dropdown-toggle mail_directory_set_edit_btn" src="media/img/icons/gear_white.png" ng-show="item.chosen" dropdown-toggle/>
+                    <ul class="dropdown-menu">
+                        <li ng-click="fn.thisDirectoryToTrash('income',item)"><a href="">删除</a></li>
+                        <li ng-click="item.change_name=true"><a href="">修改</a></li>
+                    </ul>
+                </div>
+                <input type="text" ng-model="item.tmp_name" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" class="mail_directory_set_input" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" ng-show="item.chosen&&item.change_name" placeholder="1-5个字符"/>
+                <div class="mail_directory_set_add_btn_line" ng-init="item.change_name=false" ng-show="item.chosen&&item.change_name">
+                    <div class="mail_directory_set_add_btn" ng-click="fn.thisDirectoryEdit('income',item)">确定</div>
+                    <div class="mail_directory_set_add_btn" ng-click="item=fn.thisDirectoryEditCancel(item)">取消</div>
+                </div>
+            </div>
+            <div class="mail_directory_set_item_add" popover="点击添加文件夹" popover-trigger="mouseenter" ng-mouseleave="fn.addMailDirectoryCancel()">
+                <img class="mail_directory_set_img" src="media/img/icons/folder_vector_white.png" ng-click="var.add_income_directory_clicked=true">
+                <img class="mail_directory_set_add_img" src="media/img/icons/add_white_512x512.png" ng-show="!var.add_income_directory_clicked" ng-click="var.add_income_directory_clicked=true">
+                <input type="text" ng-model="var.add_directory_name_income" class="mail_directory_set_input" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" ng-show="var.add_income_directory_clicked" placeholder="1-5个字符"/>
+                <div class="mail_directory_set_add_btn_line" ng-show="var.add_income_directory_clicked">
+                    <div class="mail_directory_set_add_btn" ng-click="fn.addMailDirectory('income')">确定</div>
+                    <div class="mail_directory_set_add_btn" ng-click="fn.addMailDirectoryCancel()">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="outcome_mail_directory_set">
+        <div class="mail_directory_set_fieldset">
+            <div class="mail_directory_set_legend">发件箱</div>
+            <div class="mail_directory_set_item" ng-repeat="item in var.mail_directory.outcome" ng-class="{'mail_directory_set_item_default':item.index==0||item.index==1||item.index==2}">
+                <img src="media/img/icons/folder_vector_white.png" class="mail_directory_set_img" ng-show="!item.chosen">
+                <img src="media/img/icons/folder_vector_red.png" class="mail_directory_set_img" ng-show="item.chosen">
+                <div class="mail_directory_set_text" ng-click="fn.mailDirectoryChosen(item)" ng-class="{'mail_directory_set_text_chosen':item.chosen}" ng-show="!item.chosen||!item.change_name">{{item.name}}</div>
+                <div class="mail_directory_set_edit_div" dropdown>
+                    <img class="dropdown-toggle mail_directory_set_edit_btn" src="media/img/icons/gear_white.png" ng-show="item.chosen" dropdown-toggle/>
+                    <ul class="dropdown-menu">
+                        <li ng-click="fn.thisDirectoryToTrash('outcome',item)"><a href="">删除</a></li>
+                        <li ng-click="item.change_name=true"><a href="">修改</a></li>
+                    </ul>
+                </div>
+                <input type="text" ng-model="item.tmp_name" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" class="mail_directory_set_input" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" ng-show="item.chosen&&item.change_name" placeholder="1-5个字符"/>
+                <div class="mail_directory_set_add_btn_line" ng-init="item.change_name=false" ng-show="item.chosen&&item.change_name">
+                    <div class="mail_directory_set_add_btn" ng-click="fn.thisDirectoryEdit('outcome',item)">确定</div>
+                    <div class="mail_directory_set_add_btn" ng-click="item=fn.thisDirectoryEditCancel(item)">取消</div>
+                </div>
+            </div>
+            <div class="mail_directory_set_item_add" popover="点击添加文件夹" popover-trigger="mouseenter" ng-mouseleave="fn.addMailDirectoryCancel()">
+                <img class="mail_directory_set_img" src="media/img/icons/folder_vector_white.png" ng-click="var.add_outcome_directory_clicked=true">
+                <img class="mail_directory_set_add_img" src="media/img/icons/add_white_512x512.png" ng-show="!var.add_outcome_directory_clicked" ng-click="var.add_outcome_directory_clicked=true">
+                <input type="text" ng-model="var.add_directory_name_outcome" class="mail_directory_set_input" ng-pattern="/^[\u4e00-\u9fa5a-zA-Z0-9]{1,5}$/" ng-show="var.add_outcome_directory_clicked" placeholder="1-5个字符"/>
+                <div class="mail_directory_set_add_btn_line" ng-show="var.add_outcome_directory_clicked">
+                    <div class="mail_directory_set_add_btn" ng-click="fn.addMailDirectory('outcome')">确定</div>
+                    <div class="mail_directory_set_add_btn" ng-click="fn.addMailDirectoryCancel()">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="user_mail_write_back" ng-show="var.write_page_visible">
+    <div id="user_mail_write" ng-controller="writeMailController">
+        <div id="write_page_top">
+            <div id="write_page_top_text">新邮件</div>
+            <input id="receiver_select_all" type="button" value="选择全部" ng-show="var.search_page_visible" ng-click="fn.selectAllReceiver()">
+            <input id="receiver_search_btn" type="button" value="查找" ng-click="fn.searchReceiverShow()"/>
+            <div id="write_page_top_cancel" ng-click="fn.writePageCancel()" btn-with-img original-img="media/img/icons/cancel_blue_256x256.png" change-img="media/img/icons/cancel_white_256x256.png" img-height="30" img-width="30" img-top="5" img-left="5"></div>
+        </div>
+        <div id="write_page_receiver" ng-style="style.receiver()">
+            <div id="write_page_receiver_text">收件人</div>
+            <div id="write_page_receiver_stuff" ng-style="style.receiverStuff()">
+                <div class="write_page_receiver_element" ng-style="style.receiverElement()" ng-repeat="chosen in receiver_selected track by $index">
+                    <div class="write_page_receiver_element_back">
+                        <div class="write_page_receiver_element_name">{{chosen.user_name}}</div>
+                        <img class="write_page_receiver_element_cancel_img" btn-cancel enter-img="media/img/icons/delete_red.png" leave-img="media/img/icons/delete_black.png" ng-click="fn.removeReceiver(chosen)">
+                    </div>
+                </div>
+                <input id="write_page_receiver_input" type="text" ng-model="receiver_key.name" ng-pattern="/[\u4e00-\u9fa50-9]/" placeholder="姓名或号码" ng-style="style.receiverInput()" ng-click="fn.writePageInputClick()"/>
+            </div>
+        </div>
+        <div id="write_page_title" ng-style="style.title()">
+            <input id="write_page_title_input" type="text" ng-model="mail_send.title" placeholder="主题"/>
+        </div>
+        <div id="write_page_content" ng-style="style.content()">
+            <textarea id="write_page_textarea" ng-style="style.content()" ng-model="mail_send.content"></textarea>
+        </div>
+        <div id="write_page_bottom">
+            <div id="write_page_bottom_btn" class="btn-group">
+                <label class="btn btn-warning" ng-model="mail_send.urgent" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">紧急</label>
+                <label class="btn btn-danger" ng-model="mail_send.important" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">重要</label>
+            </div>
+            <input id="send_mail_btn" type="button" value="发送" ng-click="fn.send_mail()"/>
+        </div>
+        <div id="write_page_search_div" ng-init="var.search_page_visible=false" ng-show="var.search_page_visible">
+            <img id="write_page_search_div_cancel" btn-cancel enter-img="media/img/icons/cancel_orange.png" leave-img="media/img/icons/cancel_blue.png" ng-click="fn.searchReceiverHide()" />
+            <input id="write_page_search_select_name" ng-model="receiver_key.name" ng-pattern="/[\u4e00-\u9fa50-9]/" placeholder="姓名或号码"/>
+            <select id="write_page_search_select_location" ng-model="receiver_key.location" ng-options="label as label for label in LDP.location">
+                <option value="">选择分公司</option>
+            </select>
+            <select id="write_page_search_select_department" ng-model="receiver_key.department" ng-options="label as label for label in LDP.department">
+                <option value="">选择部门</option>
+            </select>
+            <select id="write_page_search_select_position" ng-model="receiver_key.position" ng-options="label as label for label in LDP.position">
+                <option value="">选择职位</option>
+            </select>
+            <ul id="write_page_search_ul">
+                <li class="write_page_search_li" ng-repeat="receiver in receivers" ng-click="fn.choseReceiver(receiver)">
+                    <div class="write_page_search_user_name">{{receiver.user_name}}</div>
+                    <div class="write_page_search_user_location">{{receiver.location}}</div>
+                    <div class="write_page_search_user_department">{{receiver.department}}</div>
+                    <div class="write_page_search_user_position">{{receiver.position}}</div>
+                </li>
+            </ul>
+            <div id="write_page_search_bottom">
+                <pager id="search_receiver_navigator" total-items="var.receiver_page_count*10" ng-model="receiver_key.page_index" ng-change="fn.getReceiverInfo()"></pager>
+                <div id="search_receiver_navigator_text">共{{var.receiver_count}}人，第{{receiver_key.page_index*8-7}}-{{receiver_key.page_index==var.receiver_page_count?var.receiver_count:receiver_key.page_index*8}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "input_invalid": false,
+    "account_duplicate": false,
+    "name_duplicate":false,
+    "phone_number_duplicate":false,
+    "password_same":false,
+    "error": false,
+    "submitted": false,
+    "quit_div_src": "media/img/icons/cancel_blue.png",
+    "account":"",
+    "password":"",
+    "password2":""
+}

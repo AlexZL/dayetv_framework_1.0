@@ -1,0 +1,11 @@
+{
+    "subtitles":[
+        {
+            "id":"console",
+            "subtitle_name":"个人设置",
+            "selected":true,
+            "css_class":"user_page_navigator_origin"
+        }
+    ],
+    "user_info_set_selected":true
+}

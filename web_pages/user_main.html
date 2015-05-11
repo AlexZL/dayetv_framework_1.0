@@ -1,0 +1,18 @@
+<div id="user_main_page">
+    <div id="user_page_navigator">
+        <ul>
+            <li ng-repeat="subtitle in var.subtitles"
+                class="user_main_page_navigator_li_1 {{subtitle.css_class}}"
+                id="{{subtitle.id}}"
+                select="{{subtitle.selected}}"
+                ng-click="fn.navigatorLiClick(subtitle,this)">
+                {{subtitle.subtitle_name}}
+            </li>
+        </ul>
+    </div>
+    <div id="user_page_content">
+        <div ng-show="var.user_info_set_selected" id="user_page_set">
+            "set"
+        </div>
+    </div>
+</div>

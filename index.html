@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="dayetvApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title ng-bind-template="网络公司"></title>
+    <script src="script/dayetv.js"></script>
+    <script src="include/angularJS-1.2.19/angular.min.js"></script>
+    <script src="include/angularJS-1.2.19/angular-animate.min.js"></script>
+    <script src="include/angularJS-1.2.19/angular-route.min.js"></script>
+    <script src="include/angularJS-1.2.19/angular-resource.min.js"></script>
+    <script src="include/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/controller.js"></script>
+    <script src="script/directive.js"></script>
+    <script src="script/factory.js"></script>
+    <link rel="stylesheet" type="text/css" href="include/bootstrap.min.css">
+    <link rel="stylesheet"type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="head" ng-controller="headDivController">
+        <div id="head_logo"></div>
+        <div id="head_content">
+            <div id="head_welcome_info" ng-show="var.user.loged_in">您好，</div>
+            <div id="head_user_name" ng-show="var.user.loged_in" ng-click="fn.toUserPage()">{{var.user.name}}</div>
+            <div id="head_register_btn" class="btn_hover btn_trans" ng-show="!var.user.loged_in" ng-click="fn.toRegisterPage()">注册</div>
+            <div id="head_login_btn" class="btn_hover btn_trans" ng-show="!var.user.loged_in"><div ng-click="fn.toLoginPage()">登录</div>
+                <div id="login_page" class="delay_show_200" ng-init="var.hidden_login_page_visible=false" ng-show="var.hidden_login_page_visible">
+                    <form id="login_form_div" name="login_form" ng-mouseenter="fn.login_form_enter()" ng-mouseleave="fn.login_form_leave()">
+                        <div class="hidden_login_item">
+                            <input id="hidden_login_accout" class="hidden_login_item_content" type="text" name="account" ng-model="var.login.account" ng-pattern="/^[a-zA-Z0-9_]{4,20}$/" placeholder="帐号或手机号" required>
+                        </div>
+                        <div class="hidden_login_item">
+                            <input id="hidden_login_password" class="hidden_login_item_content" type="password" name="password" ng-model="var.login.password" ng-pattern="/^[a-zA-Z0-9\#\~\!\@\-\%\^\&\*\.,:;\\\$]{6,22}$/" placeholder="密码" required>
+                        </div>
+                        <div class="hidden_login_item">
+                            <div id="hidden_login_log_btn" class="hidden_login_btn btn_hover_blue btn_trans" ng-click="fn.LoginSubmit()">登录</div>
+                            <div id="hidden_login_quit_btn" class="hidden_login_btn btn_hover_blue btn_trans" ng-click="fn.LoginPageQuit()">取消</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="head_logout_btn" class="btn_hover btn_trans" ng-show="var.user.loged_in" ng-click="fn.logout()">注销</div>
+        </div>
+
+    </div>
+    <div id="navigator" ng-controller="navigatorDivController">
+        <div id="navigator_highlight_bar" class="delay_show" ng-show="var.sub_title_visible">
+            <div class="navigator_bar_row navigator_bar" ng-repeat="row in var.highLightBar.row" id="{{row.id}}" ng-show="row.visible"></div>
+            <div class="navigator_bar_col navigator_bar" ng-repeat="col in var.highLightBar.col" id="{{col.id}}" ng-show="col.visible"></div>
+        </div>
+        <ul id="navigator_list">
+            <li id="{{list.id}}" class="navigator_li_1" ng-repeat="list in var.lists">
+                <a ng-click="fn.navigatorSwitch(list)" style="height: 100%;width: 100%;position: absolute">
+                    <div class="navigator_li_1_div" ng-mouseenter="fn.subTitleShow(); fn.showBar(list)" ng-mouseleave="fn.hideBar(list)">
+                        <img class="navigator_li_1_img" ng-src="{{list.imgUrl}}"/>
+                        <div class="navigator_li_1_text">{{list.name}}</div>
+                    </div>
+                </a>
+                <ul class="navigator_ul_2 delay_show" ng-show="var.sub_title_visible">
+                    <li class="navigator_li_2" ng-repeat="subtitle in list.subtitles" ng-mouseenter="fn.showBar(subtitle)" ng-mouseleave="fn.hideBar(subtitle)">
+                        <a ng-click="fn.navigatorSwitch(subtitle)">
+                            <div class="navigator_li_2_div">
+                                <img class="navigator_li_2_img" ng-src="{{subtitle.imgUrl}}"/>
+                                <div class="navigator_li_2_text">{{subtitle.name}}</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id="navigator_top" ng-mouseenter="fn.subTitleHide()" ng-show="var.sub_title_visible"></div>
+        <div id="navigator_left" ng-mouseenter="fn.subTitleHide()" ng-show="var.sub_title_visible"></div>
+        <div id="navigator_right" ng-mouseenter="fn.subTitleHide()" ng-show="var.sub_title_visible"></div>
+        <div id="navigator_bottom" ng-mouseenter="fn.subTitleHide()" ng-show="var.sub_title_visible"></div>
+        <div id="navigator_back_cover" class="delay_show" ng-show="var.sub_title_visible"></div>
+    </div>
+<!--</div>-->
+    <div ng-view class="ng_view_frame delay_show"></div>
+</body>
+</html>

@@ -1,0 +1,1362 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #5995e3;
+}
+input,textarea{
+    outline:none;
+}
+
+.float_left{
+    float: left;
+}
+.margin_left_10{
+    margin-left: 10px;
+}
+.margin_left_20{
+    margin-left: 20px;
+}
+.background_color_white{
+    background-color: #ffffff;
+}
+.btn_hover{
+    color:#ffffff;
+    border: 1px solid #ffffff;
+}
+.btn_hover:hover{
+    color:#5995e3;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.btn_hover_blue{
+    color:#5995e3;
+    border: 1px solid #5995e3;
+}
+.btn_hover_blue:hover{
+    color: #ffffff;
+    background-color: #5995e3;
+    border: 1px solid #ffffff;
+}
+/*---------------------------------------------css-animation--------------------------------------------------*/
+.delay_show.ng-hide-add,.delay_show.ng-hide-remove{
+    transition:0.5s linear all;
+    display: block;
+}
+.delay_show.ng-hide-add{
+    opacity: 1;
+}
+.delay_show.ng-hide-add.ng-hide-add-active{
+    opacity: 0;
+}
+.delay_show.ng-hide-remove{
+    opacity: 0;
+}
+.delay_show.ng-hide-remove.ng-hide-remove-active{
+    opacity: 1;
+}
+.delay_show_200.ng-hide-add,.delay_show_200.ng-hide-remove{
+    transition:200ms linear all;
+    display: block;
+}
+.delay_show_200.ng-hide-add{
+    opacity: 1;
+}
+.delay_show_200.ng-hide-add.ng-hide-add-active{
+    opacity: 0;
+}
+.delay_show_200.ng-hide-remove{
+    opacity: 0;
+}
+.delay_show_200.ng-hide-remove.ng-hide-remove-active{
+    opacity: 1;
+}
+
+/*---------------------------------------------css-animation-end--------------------------------------------------*/
+
+
+/*-----------------------------------hidden_login_page--------------------------------------*/
+#login_form_div{
+    position: absolute;
+    height: 100px;
+    width: 170px;
+    top: 19px;
+    left: -100px;
+    z-index: 25;
+    transition: 0.2s;
+    border-radius: 10px;
+    border:1px solid #ffffff;
+    background-color: #ffffff;
+    color:#5995e3;
+    opacity: 0.5;
+}
+#login_form_div:hover{
+    opacity: 1;
+}
+.hidden_login_item{
+    position: relative;
+    width: 180px;
+    height: 20px;
+    margin-top: 10px;
+}
+.hidden_login_item_content{
+    position: absolute;
+    height: 25px;
+    width: 150px;
+    left: 10px;
+    font-size: 15px;
+    line-height: 25px;
+    padding-left: 10px;
+    color:  #5995e3;
+    border:2px solid #5995e3;
+}
+.hidden_login_item_content.ng-valid{
+    color: green;
+}
+.hidden_login_item_content.ng-invalid{
+    color: red;
+}
+.hidden_login_btn{
+    position: relative;
+    height: 40px;
+    width: 80px;
+    margin-left: 20px;
+    float: left;
+}
+/*-----------------------------------hidden_register_page-end--------------------------------------*/
+/*-----------------------------------hidden_register_page--------------------------------------*/
+#hidden_register_page{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    top:-40px;
+}
+#register_form_div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+.hidden_register_item{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-top: 60px;
+}
+.hidden_register_item_label{
+    position: absolute;
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 40px;
+}
+.hidden_register_item_content{
+    position: absolute;
+    height: 40px;
+    width: 250px;
+    left: 130px;
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.hidden_register_item_content.ng-invalid{
+    border: 1px solid red;
+    color: red;
+}
+.hidden_register_item_content.ng-valid{
+    border: 1px solid green;
+}
+.hidden_register_btn{
+    position: relative;
+    height: 40px;
+    width: 80px;
+    margin-left: 110px;
+}
+#hidden_register_page_quit_img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 0px;
+    top: 0px;
+}
+.btn_trans{
+    height: 20px;
+    width: 50px;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/*-----------------------------------hidden_register_page-end--------------------------------------*/
+
+/*-----------------------------------head--------------------------------------*/
+#head{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+}
+#head_logo{
+    position: absolute;
+    height: 100%;
+    width: 70%;
+}
+#head_content{
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: 70%;
+}
+#head_welcome_info{
+    position: absolute;
+    height: 20px;
+    width: 60px;
+    left: -150px;
+    top:10px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 20px;
+}
+#head_user_name{
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    left: -80px;
+    top:10px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#head_register_btn{
+    position: absolute;
+    left: -10px;
+    top:10px;
+}
+#head_login_btn{
+    position: absolute;
+    left: 60px;
+    top:10px;
+}
+#head_logout_btn{
+    position: absolute;
+    height: 20px;
+    width: 50px;
+    left: 50px;
+    top:10px;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+/*-----------------------------------head_end--------------------------------------*/
+
+/*-----------------------------------navigator--------------------------------------*/
+#navigator{
+    position: absolute;
+    height: 40px;
+    top:40px;
+    z-index: 10;
+}
+#navigator_list{
+    position: absolute;
+    width: 1000px;
+    cursor: pointer;
+}
+.navigator_li_1{
+    list-style-type: none;
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 200px;
+    display: block;
+}
+.navigator_li_1_div{
+    position: absolute;
+    height: 40px;
+    width: 200px;
+}
+.navigator_li_1_img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+}
+.navigator_li_1_text{
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    line-height: 40px;
+    left: 90px;
+    color: #ffffff;
+    font-size: 15px;
+}
+.navigator_li_2{
+    list-style-type: none;
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 200px;
+    display: block;
+}
+.navigator_li_2_img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top:10px;
+}
+.navigator_li_2_text{
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    line-height: 40px;
+    left: 90px;
+    color: #ffffff;
+    font-size: 15px;
+}
+.navigator_ul_2{
+    position: absolute;
+    top:40px;
+}
+#navigator_left{
+
+}
+#navigator_right{
+    position: absolute;
+    width: 50px;
+    height: 200px;
+    left: 1000px;
+    top:0px;
+}
+#navigator_bottom{
+    position: absolute;
+    width: 1000px;
+    height: 50px;
+    top:200px;
+}
+#navigator_top{
+    position: absolute;
+    width: 1000px;
+    height: 20px;
+    top:-20px;
+}
+.navigator_bar.ng-hide-add,.navigator_bar.ng-hide-remove{
+    transition:0.5s linear all;
+    display: block;
+}
+.navigator_bar.ng-hide-add{
+    opacity: 0.2;
+}
+.navigator_bar.ng-hide-add.ng-hide-add-active{
+    opacity: 0;
+}
+.navigator_bar.ng-hide-remove{
+    opacity: 0;
+}
+.navigator_bar.ng-hide-remove.ng-hide-remove-active{
+    opacity: 0.2;
+    background-color: #ffffff;
+}
+.navigator_bar_row{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    opacity: 0.2;
+}
+.navigator_bar_col{
+    position: absolute;
+    height: 40px;
+    width: 1000px;
+    background-color: #ffffff;
+    opacity: 0.2;
+}
+#navigator_col_0{
+}
+#navigator_col_1{
+    top:40px;
+}
+#navigator_col_2{
+    top:80px;
+}
+#navigator_col_3{
+    top:120px;
+}
+#navigator_col_4{
+    top:160px;
+}
+#navigator_row_0{
+    left: 0px;
+}
+#navigator_row_1{
+    left: 200px;
+}
+#navigator_row_2{
+    left: 400px;
+}
+#navigator_row_3{
+    left: 600px;
+}
+#navigator_row_4{
+    left: 800px;
+}
+#navigator_back_cover{
+    position: absolute;
+    height: 200px;
+    width: 1000px;
+    z-index: -1;
+    background-color: #4b6eae;
+    box-shadow: 2px 2px 2px #3e3e3e;
+}
+/*-----------------------------------navigator_end-------------------------------------*/
+
+
+/*-----------------------------------ng-view-------------------------------------*/
+.ng_view_frame{
+    position: absolute;
+    top:80px;
+    width: 100%;
+    height: 87%;
+}
+/*-----------------------------------ng-view-------------------------------------*/
+
+/*-----------------------------------user_main_page-------------------------------------*/
+
+#user_main_page{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#user_page_navigator{
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+.user_main_page_navigator_li_1{
+    position: relative;
+    margin-left: 5px;
+    height: 30px;
+    width: 100px;
+    left: 10px;
+    float: left;
+    list-style-type: none;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 5;
+}
+.user_page_navigator_change{
+    background-color: #b8a6c8;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+.user_page_navigator_origin{
+    background-color: #8fc8bb;
+}
+#user_page_content{
+    padding:10px;
+    position: relative;
+    width: 98%;
+    height: 93%;
+    left: 5px;
+    background-color: #b8a6c8;
+    border: 1px solid #ffffff;
+}
+/*-----------------------------------user_main_page_end-------------------------------------*/
+
+/*-----------------------------------mail-------------------------------------*/
+#user_mail_top{
+    position: absolute;
+    width: 98%;
+    height: 40px;
+    border-bottom: 1px solid #ffc666;
+    border-top: 1px solid #ffc666;
+}
+.set_bar{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #5995e3;
+    z-index: 3;
+}
+.set_bar_front_blank{
+    position: relative;
+    height: 100%;
+    width: 10%;
+    float: left;
+}
+#all_mail_chosen_checkbox{
+    position: relative;
+    top:10px;
+    margin-left: 1%;
+    float: left;
+}
+#mail_chosen_index_input{
+    position: relative;
+    height: 30px;
+    width: 20%;
+    top:5px;
+    margin-left: 1%;
+    float: left;
+}
+.mail_top_set_div{
+    position: relative;
+    height: 30px;
+    width: 50px;
+    margin-left: 1%;
+    float: left;
+}
+.mail_top_set_btn{
+    position: relative;
+    width: 50px;
+    height: 30px;
+    top:5px;
+    border-radius: 5px;
+    background-color:#ffffff;
+    border: 2px solid #ffffff;
+}
+.mail_top_set_btn:hover{
+    border: 2px solid #ffffff;
+    background-color: #5995e3;
+}
+#mail_page_navigator_text{
+    position: relative;
+    top:5px;
+    display: block;
+    height: 30px;
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    float: right;
+}
+#mail_page_navigator{
+    position: relative;
+    top:-15px;
+    display: block;
+    height: 30px;
+    width: 160px;
+    font-size: 12px;
+    float: right;
+}
+#user_mail_left{
+    position: absolute;
+    width: 10%;
+    height: 80%;
+    top:10%;
+}
+.mail_left_element{
+    padding-left: 10px;
+    position: relative;
+    height: 30px;
+    width: 80%;
+    left: 10%;
+    line-height: 30px;
+    color:#ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.mail_left_element:hover{
+    background-color: #80c3e3;
+}
+.mail_left_element_divide{
+    padding-left: 10px;
+    position: relative;
+    height: 30px;
+    width: 80%;
+    left: 10%;
+    line-height: 30px;
+    color:#ffffff;
+    cursor: pointer;
+}
+#mail_create_btn{
+    position: relative;
+    height: 30px;
+    width: 80%;
+    left: 10%;
+    line-height: 30px;
+    color:#ffffff;
+    background-color: #5d498e;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#mail_create_btn:hover{
+    background-color: #7f6ab8;
+}
+#user_mail_center{
+    position: absolute;
+    left: 10%;
+    width: 88%;
+    height: 95%;
+    top:50px;
+    background-color: #eeeeee;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.mail_left_element_star{
+    position: absolute;
+    right: 0px;
+    top:5px;
+}
+#user_mail_content{
+    position: absolute;
+    left: 10%;
+    width: 88%;
+    height: 95%;
+    top:50px;
+    background-color: #eeeeee;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#mail_content_title_line{
+    position: relative;
+    height: 30px;
+    width: 96%;
+    left: 2%;
+    margin-top:20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #a2a2a2;
+}
+#mail_content_title{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    left: 20px;
+}
+#mail_content_important_img{
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    right: 120px;
+    bottom:5px;
+}
+#mail_content_urgent_img{
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    right: 20px;
+    bottom:5px;
+}
+#mail_content_user_line{
+    position: relative;
+    height: 25px;
+    width: 96%;
+    margin-top:10px;
+    padding-bottom: 5px;
+    left: 2%;
+    border-bottom: 1px solid #a2a2a2;
+}
+.mail_content_creator_text{
+    position: relative;
+    height: 25px;
+    width: 70px;
+    line-height: 25px;
+    margin-left: 20px;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    bottom:3px;
+    text-align: right;
+}
+.mail_content_creator_item{
+    position: relative;
+    height: 25px;
+    width: 80px;
+    margin-left: 10px;
+    float: left;
+    font-size: 15px;
+    background-color: #a3a3a3;
+    bottom:3px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+}
+#mail_content_content_area{
+    position: relative;
+    width: 96%;
+    height: auto;
+    left: 2%;
+    margin-top:5px;
+    padding-left: 10px;
+}
+#mail_directory_set{
+    position: absolute;
+    left: 10%;
+    width: 88%;
+    height: 95%;
+    top:50px;
+    background-color: #eeeeee;
+}
+#income_mail_directory_set{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-color: #5995e3;
+}
+#outcome_mail_directory_set{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top:50%;
+    background-color:#5995e3;
+}
+.mail_directory_set_fieldset{
+    position: absolute;
+    height: 90%;
+    top:10%;
+    width: 100%;
+    border: 1px solid#ffffff;
+    background-color: inherit;
+    border-radius: 10px;
+}
+.mail_directory_set_legend{
+    position: absolute;
+    top:-20px;
+    left: 5%;
+    height: 40px;
+    width: 100px;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    background-color: inherit;
+}
+.mail_directory_set_item{
+    position: relative;
+    float: left;
+    height: 100px;
+    width: 8%;
+    margin-left: 2%;
+    margin-top: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.mail_directory_set_item_add{
+    position: relative;
+    float: left;
+    height: 100px;
+    width: 8%;
+    margin-left: 2%;
+    margin-top: 20px;
+    opacity: 0.5;
+    transition: 0.5s;
+    color:black;
+}
+.mail_directory_set_item_add:hover{
+    opacity: 1;
+}
+.mail_directory_set_item_default{
+    opacity: 0.5;
+}
+.mail_directory_set_img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.mail_directory_set_add_img{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top:35%;
+    left: 25%;
+}
+.mail_directory_set_text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 120px;
+}
+.mail_directory_set_edit_div{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    left: 10px;
+    top:7px;
+}
+.mail_directory_set_edit_btn{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+}
+.mail_directory_set_input{
+    position: absolute;
+    height: 30px;
+    width: 90%;
+    left: 5%;
+    top:30%;
+    color:#000000;
+    padding-left: 10px;
+}
+.mail_directory_set_add_btn_line{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom:5px;
+}
+.mail_directory_set_add_btn{
+    position: relative;
+    height: 20px;
+    width: 40%;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid#ffffff;
+    float: left;
+    color: #ffffff;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.mail_directory_set_add_btn:hover{
+    color: red;
+    border: 1px solid red;
+}
+.mail_directory_set_text_chosen{
+    color:red;
+}
+/*----------------------------------------------mail_write_page---------------------------------------------------------*/
+#user_mail_write{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    bottom: 10px;
+    right: 20px;
+    background-color: #ffffff;
+    border:1px solid #888888;
+    z-index: 10;
+
+}
+#write_page_top{
+    position:relative;
+    width: 100%;
+    height: 40px;
+    background-color: #4b6eae;
+}
+#write_page_top_text{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    left: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+#receiver_search_btn{
+    position: absolute;
+    width: 120px;
+    height: 39px;
+    right: 50px;
+}
+#receiver_select_all{
+    position: absolute;
+    width: 120px;
+    height: 39px;
+    right: 175px;
+}
+#write_page_top_cancel{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 10px;
+}
+#write_page_receiver{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+}
+#write_page_receiver_text{
+    position: absolute;
+    width: 60px;
+    height: 39px;
+    font-size: 15px;
+    line-height: 39px;
+    padding-left: 10px;
+    background-color: #ffffff;
+}
+#write_page_receiver_stuff{
+    position: absolute;
+    left: 70px;
+    width: 528px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.write_page_receiver_element{
+    position: relative;
+    width: 80px;
+    height: 39px;
+    float: left;
+    border-radius: 3px;
+}
+.write_page_receiver_element_back{
+    position: relative;
+    width: 76px;
+    height: 26px;
+    top:7px;
+    left: 2px;
+    border-radius: 3px;
+    background-color: #bdbdbd;
+}
+.write_page_receiver_element_name{
+    position: absolute;
+    height: 26px;
+    width: 60px;
+    top:0px;
+    left: 2px;
+    font-size: 10px;
+    line-height: 26px;
+    padding-left: 5px;
+}
+.write_page_receiver_element_cancel_img{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top:8px;
+    left: 62px;
+}
+#write_page_receiver_input{
+    position: relative;
+    height: 39px;
+    padding-left: 10px;
+    border:none;
+    font-size: 20px;
+    float: left;
+    box-shadow: none;
+}
+#write_page_title{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #888888;
+    border-top: 1px solid #888888;
+}
+#write_page_title_input{
+    width: 100%;
+    height: 39px;
+    border:none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+#write_page_content{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border-top:1px solid #888888;
+    background-color: #5c92ae;
+}
+#write_page_textarea{
+    border:none;
+    resize: none;
+    width: 100%;
+    font-size: 20px;
+}
+#write_page_bottom{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom:0px;
+    background-color: #ffff00;
+}
+#write_page_search_div{
+    position: absolute;
+    height: 220px;
+    width: 400px;
+    right: 0px;
+    bottom:400px;
+    background-color: #e0ded9;
+}
+#write_page_search_div_cancel{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 0px;
+    top:0px;
+}
+#write_page_search_select_name{
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    top:2px;
+    left: 10px;
+}
+#write_page_search_select_location{
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    left: 110px;
+    top:2px;
+}
+#write_page_search_select_department{
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    left: 210px;
+    top:2px;
+}
+#write_page_search_select_position{
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    left: 290px;
+    top:2px;
+}
+#write_page_search_ul{
+    position: absolute;
+    top:22px;
+    height: 160px;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.write_page_search_li{
+    list-style: none;
+    position: relative;
+    height: 20px;
+    width: 100%;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.write_page_search_li:hover{
+    background-color: #ffffff;
+}
+.write_page_search_user_name{
+    position: relative;
+    float: left;
+    height: 20px;
+    width: 100px;
+    line-height: 20px;
+    font-size: 15px;
+}
+.write_page_search_user_location{
+    position: relative;
+    float: left;
+    height: 20px;
+    width: 100px;
+    line-height: 20px;
+    font-size: 15px;
+}
+.write_page_search_user_department{
+    position: relative;
+    float: left;
+    height: 20px;
+    width: 80px;
+    line-height: 20px;
+    font-size: 15px;
+}
+.write_page_search_user_position{
+    position: relative;
+    float: left;
+    height: 20px;
+    width: 80px;
+    line-height: 20px;
+    font-size: 15px;
+}
+#write_page_search_bottom{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    top: 180px;
+}
+#search_receiver_navigator{
+    position: relative;
+    height: 40px;
+    width: 160px;
+    bottom:10px;
+    font-size: 12px;
+    float: right;
+}
+#search_receiver_navigator_text{
+    position: relative;
+    height: 40px;
+    width: 160px;
+    font-size: 12px;
+    float: right;
+    text-align: center;
+    line-height: 50px;
+}
+/*----------------------------------------------mail_write_page_end---------------------------------------------------------*/
+#income_mail_directory{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: #5995e3;
+}
+#outcome_mail_directory{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: #5995e3;
+}
+#income_mail_all{
+    position: relative;
+    height: 30px;
+    width: 80px;
+    float: left;
+}
+.income_mail_element{
+    position: relative;
+    height: 30px;
+    width: 80px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border: 1px solid #eeeeee;
+}
+.income_mail_element_1{
+    color: #ffffff;
+    opacity: 0.7;
+}
+.income_mail_element_2{
+    color: #000000;
+    background-color:#eeeeee ;
+}
+.income_mail_element_3{
+    color: #ffffff;
+}
+.add_mail_directory_div{
+    position: relative;
+    height: 30px;
+    width: 40px;
+    float: left;
+}
+.add_mail_directory_btn{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    border-radius: 0px;
+}
+.add_mail_directory_content{
+    position: absolute;
+    height: 40px;
+    width: 200px;
+    top:30px;
+    background-color: #ffffff;
+    z-index:5;
+}
+.mail_item{
+    position: relative;
+    width: 100%;
+    height: 39px;
+    line-height: 39px;
+    border-bottom: 1px solid #b2b2b2;
+}
+.mail_item_column{
+    position: relative;
+    width: 100%;
+    height: 39px;
+    line-height: 39px;
+    border-bottom: 1px solid #b2b2b2;
+    transition: 200ms;
+    cursor: pointer;
+}
+.mail_item_column:hover{
+    background-color: #5d498e;
+    color:#ffffff;
+}
+.mail_item_not_read{
+    font-weight: bolder;
+}
+.mail_item_read{
+    font-weight: lighter;
+}
+.mail_creator{
+    position: relative;
+    height: 39px;
+    width: 210px;
+    float: left;
+}
+.mail_note_div{
+    position: relative;
+    width: 110px;
+    height: 39px;
+    line-height: 39px;
+    float: left;
+}
+.mail_note_element{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top:10px;
+    margin-left: 10px;
+    float:left;
+}
+.mail_creator_element{
+
+}
+.mail_creator_front_blank{
+    position: relative;
+    height: 39px;
+    width: 100px;
+    float:left;
+    cursor: pointer;
+    text-align: center;
+}
+.mail_creator_name{
+    position: relative;
+    height: 39px;
+    width: 100px;
+    float:left;
+    cursor: pointer;
+    text-align: center;
+}
+.mail_creator_LDP{
+    position: relative;
+    width: 100px;
+    height: 39px;
+    float:left;
+    font-size: 10px;
+}
+.mail_creator_location{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    height: 19px;
+    width: 100px;
+    line-height: 19px;
+    text-align: center;
+}
+.mail_creator_department{
+    position: absolute;
+    left: 0px;
+    bottom:0px;
+    height: 19px;
+    width: 50px;
+    line-height: 19px;
+    text-align: center;
+}
+.mail_creator_position{
+    position: absolute;
+    left: 50px;
+    bottom:0px;
+    height: 19px;
+    width: 50px;
+    line-height: 19px;
+    text-align: center;
+}
+.mail_creator_details{
+    position: absolute;
+    left: 10%;
+    height: 120px;
+    width: 250px;
+    top: 40px;
+    background-color: #bf77e3;
+    box-shadow: 2px 2px 2px #3e3e3e;
+    border-radius: 5px;
+    z-index: 100;
+    font-size: 10px;
+}
+.mail_creator_details_img{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 10px;
+    top:10px;
+}
+.mail_creator_details_name{
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    left: 70px;
+}
+.mail_creator_details_tel{
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    left: 155px;
+}
+.mail_creator_details_loc{
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    left: 70px;
+    top:30px;
+}
+.mail_creator_details_dep{
+    position: absolute;
+    height: 20px;
+    width: 50px;
+    left: 150px;
+    top:30px;
+}
+.mail_creator_details_pos{
+    position: absolute;
+    height: 20px;
+    width: 50px;
+    left: 200px;
+    top:30px;
+}
+.mail_creator_details_divide{
+    position: absolute;
+    height: 1px;
+    width: 80%;
+    left: 10%;
+    top:70px;
+    background-color: #a6a6a6;
+}
+.mail_creator_details_words{
+    position: absolute;
+    height: 20px;
+    width: 220px;
+    left: 15px;
+    top:65px;
+}
+.mail_creator_details_cancel_btn{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top:0px;
+    right: 0px;
+    border-radius: 5px;
+}
+.mail_title{
+    position: absolute;
+    height: 39px;
+    left: 350px;
+}
+.mail_create_time{
+    position: absolute;
+    width: 20%;
+    height: 39px;
+    right: 40px;
+}
+.mail_read_img{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    top:5px;
+}
+#mail_read_gif_div{
+    position: absolute;
+}
+.xxx{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    float: left;
+}
+.yyy{
+    background-color: red;
+}
+.zzz{
+    background-color: blue;
+}
+.hhh{
+    background-color: green;
+}

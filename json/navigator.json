@@ -1,0 +1,275 @@
+{
+    "lists":[
+        {
+            "id":"nav_0_0",
+            "class":"navigator_li_1",
+            "name": "首页",
+            "location":"",
+            "sequence": "0",
+            "imgUrl":"media/img/icons/sell_white.png",
+            "need_login":false,
+            "need_priority":"",
+            "row":0,
+            "col":0,
+            "subtitles":[
+                {
+                    "id":"nav_0_1",
+                    "class":"navigator_li_2",
+                    "name": "我的邮箱",
+                    "location":"",
+                    "imgUrl":"media/img/icons/mail_white.png",
+                    "need_login":true,
+                    "need_priority":"",
+                    "row":0,
+                    "col":1
+                }
+            ]
+        },
+        {
+            "id":"nav_1_0",
+            "class":"navigator_li_1",
+            "name": "营业厅",
+            "location":"",
+            "sequence": "1",
+            "imgUrl":"media/img/icons/sell_white.png",
+            "need_login":false,
+            "need_priority":"",
+            "row":1,
+            "col":0,
+            "subtitles": [
+                {
+                    "id":"nav_1_1",
+                    "class":"navigator_li_2",
+                    "name": "营业厅-1",
+                    "location":"",
+                    "imgUrl":"media/img/icons/sell_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":1,
+                    "col":1
+                },
+                {
+                    "id":"nav_1_2",
+                    "class":"navigator_li_2",
+                    "name": "营业厅-2",
+                    "location":"",
+                    "imgUrl":"media/img/icons/sell_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":1,
+                    "col":2
+                },
+                {
+                    "id":"nav_1_3",
+                    "class":"navigator_li_2",
+                    "name": "营业厅-3",
+                    "location":"",
+                    "imgUrl":"media/img/icons/sell_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":1,
+                    "col":3
+                }
+            ]
+        },
+        {
+            "id":"nav_2_0",
+            "class":"navigator_li_1",
+            "name": "技术部",
+            "sequence": "2",
+            "imgUrl":"media/img/icons/tech_white.png",
+            "need_login":false,
+            "need_priority":"",
+            "row":2,
+            "col":0,
+            "subtitles": [
+                {
+                    "id":"nav_2_1",
+                    "class":"navigator_li_2",
+                    "name": "技术部-1",
+                    "location":"",
+                    "imgUrl":"media/img/icons/tech_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":2,
+                    "col":1
+                },
+                {
+                    "id":"nav_2_2",
+                    "class":"navigator_li_2",
+                    "name": "技术部-2",
+                    "location":"",
+                    "imgUrl":"media/img/icons/tech_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":2,
+                    "col":2
+                },
+                {
+                    "id":"nav_2_3",
+                    "class":"navigator_li_2",
+                    "name": "技术部-3",
+                    "location":"",
+                    "imgUrl":"media/img/icons/tech_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":2,
+                    "col":3
+                }
+            ]
+        },
+        {
+            "id":"nav_3_0",
+            "class":"navigator_li_1",
+            "name": "维修部",
+            "location":"",
+            "sequence": "3",
+            "imgUrl":"media/img/icons/repair_white.png",
+            "need_login":false,
+            "need_priority":"",
+            "row":3,
+            "col":0,
+            "subtitles": [
+                {
+                    "id":"nav_3_1",
+                    "class":"navigator_li_2",
+                    "name": "维修部-1",
+                    "location":"",
+                    "imgUrl":"media/img/icons/repair_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":3,
+                    "col":1
+                },
+                {
+                    "id":"nav_3_2",
+                    "class":"navigator_li_2",
+                    "name": "维修部-2",
+                    "location":"",
+                    "imgUrl":"media/img/icons/repair_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":3,
+                    "col":2
+                },
+                {
+                    "id":"nav_3_3",
+                    "class":"navigator_li_2",
+                    "name": "维修部-3",
+                    "location":"",
+                    "imgUrl":"media/img/icons/repair_white.png",
+                    "need_login":false,
+                    "need_priority":"",
+                    "row":3,
+                    "col":3
+                }
+            ]
+        },
+        {
+            "id":"nav_4_0",
+            "class":"navigator_li_1",
+            "name": "图纸",
+            "location":"web_pages/drawing/drawing_index.html",
+            "sequence": "4",
+            "imgUrl":"media/img/icons/drawing_white.png",
+            "need_login":true,
+            "need_priority":"",
+            "row":4,
+            "col":0,
+            "subtitles": [
+                {
+                    "id":"nav_4_1",
+                    "class":"navigator_li_2",
+                    "name": "图纸概览",
+                    "location":"web_pages/drawing/drawing_overview.html",
+                    "imgUrl":"media/img/icons/drawing_overview_white.png",
+                    "need_login":true,
+                    "need_priority":"view_drawing",
+                    "row":4,
+                    "col":1
+                },
+                {
+                    "id":"nav_4_2",
+                    "class":"navigator_li_2",
+                    "name": "图纸搜索",
+                    "location":"web_pages/drawing/drawing_search.html",
+                    "imgUrl":"media/img/icons/drawing_search_white.png",
+                    "need_login":true,
+                    "need_priority":"view_drawing",
+                    "row":4,
+                    "col":2
+                },
+                {
+                    "id":"nav_4_3",
+                    "class":"navigator_li_2",
+                    "name": "图纸编辑",
+                    "location":"web_pages/drawing/drawing_edit.html",
+                    "imgUrl":"media/img/icons/drawing_edit_white.png",
+                    "need_login":true,
+                    "need_priority":"edit_drawing",
+                    "row":4,
+                    "col":3
+                },
+                {
+                    "id":"nav_4_4",
+                    "class":"navigator_li_2",
+                    "name": "图纸上传",
+                    "location":"web_pages/drawing/drawing_upload.html",
+                    "imgUrl":"media/img/icons/drawing_upload_white.png",
+                    "need_login":true,
+                    "need_priority":"upload_drawing",
+                    "row":4,
+                    "col":4
+                }
+            ]
+        }
+    ],
+    "highLightBar":
+    {
+        "row":[
+            {
+                "id":"navigator_row_0",
+                "visible":false
+            },
+            {
+                "id":"navigator_row_1",
+                "visible":false
+            },
+            {
+                "id":"navigator_row_2",
+                "visible":false
+            },
+            {
+                "id":"navigator_row_3",
+                "visible":false
+            },
+            {
+                "id":"navigator_row_4",
+                "visible":false
+            }
+        ],
+        "col":[
+            {
+                "id":"navigator_col_0",
+                "visible":false
+            },
+            {
+                "id":"navigator_col_1",
+                "visible":false
+            },
+            {
+                "id":"navigator_col_2",
+                "visible":false
+            },
+            {
+                "id":"navigator_col_3",
+                "visible":false
+            },
+            {
+                "id":"navigator_col_4",
+                "visible":false
+            }
+        ]
+    },
+    "sub_title_visible":false
+}

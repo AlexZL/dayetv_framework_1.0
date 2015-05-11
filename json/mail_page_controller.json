@@ -1,0 +1,14 @@
+{
+    "mail_content_visible":false,
+    "write_page_visible":false,
+    "set_directory_visible":false,
+    "all_mail_chosen":false,
+    "mail_set_btn_visible":false,
+    "add_income_directory_clicked":false,
+    "add_outcome_directory_clicked":false,
+    "mail_content":"",
+    "mail_chosen_arr":[],
+    "mail_page_index":1,
+    "mail_type":0,
+    "mail_directory_index":0
+}
